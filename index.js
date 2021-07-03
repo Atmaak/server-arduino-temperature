@@ -23,11 +23,11 @@ async function onData(data) {
 
     if(data.includes('stupne')){
         stupne = data.toString();
-        console.log(stupne)
+        console.log('stupne')
     }
     if(data.includes('vlhkost')){
         vlhkost = data.toString();
-        console.log(vlhkost)
+        console.log('vlhkost')
     }
 }
 

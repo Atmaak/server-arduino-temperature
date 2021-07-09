@@ -1,8 +1,10 @@
 var serialport = require('serialport');
 const express = require('express');
+var cors = require('cors')
 const app = express()
 const potr = 3000
 
+app.use(cors())
 var stupne = 0;
 var vlhkost = 0;
 

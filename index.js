@@ -15,7 +15,7 @@ var port = new serialport('COM3', {
 port.on('open', onOpen);
 port.on('data', onData);
 function onOpen() {
-    console.log('opened')
+    //console.log('opened')
 }
 async function onData(data) {
     /*console.log(data)
@@ -25,17 +25,17 @@ async function onData(data) {
 
     if(data.includes('stupne')){
         stupne = data.toString();
-        console.log('stupne')
+        //console.log('stupne')
     }
     if(data.includes('vlhkost')){
         vlhkost = data.toString();
-        console.log('vlhkost')
+        //console.log('vlhkost')
     }
 }
 
 
 app.listen(potr, () => {
-  console.log(`Example app listening at http://localhost:${potr}`)
+  console.log('Started')
 })
 app.get('/', (req, res) => {
     res.send(`

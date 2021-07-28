@@ -38,6 +38,10 @@ app.listen(potr, () => {
   console.log('Started')
 })
 app.get('/', (req, res) => {
+    if (typeof stupne === 'undefined' || stupne === null || typeof vlhkost === 'undefined' || vlhkost === null) {
+        throw error
+    }
+
     res.send(`
     {
         ${stupne},

@@ -8,7 +8,6 @@ const port = new SerialPort({ path: 'COM3', baudRate: 9600 }, function (err) {
   }
 })
 
-
 const io = require('socket.io')(8080, {
   cors: {
     origin: ["https://admin.socket.io", "http://localhost:3000" ],

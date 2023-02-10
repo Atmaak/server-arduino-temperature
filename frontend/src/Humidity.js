@@ -12,7 +12,7 @@ const Humidity = () => {
                 theme="dark"
                 value={tempHum?.humidity}
                 max="100"
-                steps="10"
+                steps="20"
                 format="%"
                 size="large"
                 height={document.querySelector('.circle')?.clientHeight*.75}

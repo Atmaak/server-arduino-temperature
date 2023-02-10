@@ -11,7 +11,7 @@ const Temperature = () => {
           theme="dark"
           value={tempHum?.temperature}
           max="40"
-          steps="4"
+          steps="20"
           format="°C"
           size="large"
           height={document.querySelector('.circle')?.clientHeight*.75}

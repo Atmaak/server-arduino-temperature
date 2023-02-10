@@ -13,7 +13,7 @@ const io = require('socket.io')(8080, {
     origin: ["https://admin.socket.io", "http://localhost:3000" ],
     credentials: true
   }
-} )
+})
 
 const sendData = (data) => {
   io.emit('send-data', data)

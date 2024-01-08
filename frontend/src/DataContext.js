@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { io } from 'socket.io-client'
 const DataContext = React.createContext()
 
-const socket = io('http://localhost:8080')
+const socket = io('http://192.168.8.199:8080')
 
 socket.on('connect', () => {
     console.log('connected')
@@ -16,8 +16,7 @@ export function DataProvider({ children }){
     const [tempHum, setTempHum] = useState()
 
     socket.on('send-data', (data) => {
-        let json = JSON.parse(data)
-        setTempHum(json)
+        setTempHum(data[0])
     })
 
     const value = {

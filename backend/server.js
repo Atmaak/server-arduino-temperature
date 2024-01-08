@@ -29,7 +29,7 @@ const sequelize = new Sequelize(db.db_name, db.user, db.password, {
   dialect: db.dialect,
 })
 
-sequelize.sync({ force: alter }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   console.log('Drop and Resync Db');
 })
 
@@ -43,8 +43,14 @@ const sendData = async (data) => {
   io.emit('send-data', data)
 }
 
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
   console.log(socket.id)
+  const data = await Temperature.findAll({
+    order: [['id', 'DESC']], // Assuming there is a 'createdAt' field in your model
+    limit: 1, // Limit the result to only one record
+  })
+  console.log(data)
+  sendData(data)
 })
 
 port.pipe(parser)
